@@ -242,7 +242,7 @@ function searchStart(){
 $('form').addClass('disable');
 var search = $('#search').val();
 $.ajax({
-url: "https://mohammadahad.xyz/ng.php?n=" + search,
+url: "https://mohammadahad.xyz/ahadngfull.php?n=" + search,
 method: "GET",
 success:function(res){
 onStop = true;
@@ -278,6 +278,8 @@ $('form').removeClass('disable');
 },
 error:function(){
 onStop = true;
+$('form').removeClass('disable');
+alert('Network Error or Server Error');
 }
 });
 }
