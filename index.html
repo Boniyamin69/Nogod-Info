@@ -1,288 +1,542 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Nagad Number Info</title>
-<meta name="referrer" content="no-referrer">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
-<link rel="shortcut icon" href="https://play-lh.googleusercontent.com/Iks014Ul-atatMhWs8rLbtG7cIZLPfpeMDdkLtmq5o7D5_MlFNu5mmIqRHAY45aOhapp">
-<meta property="og:image" content="https://play-lh.googleusercontent.com/Iks014Ul-atatMhWs8rLbtG7cIZLPfpeMDdkLtmq5o7D5_MlFNu5mmIqRHAY45aOhapp">
-<style>
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+<head> 
+	<meta charset="UTF-8">
+    <title>NAGAD INFO BY YAMIN-69</title>
+        <meta property="og:title" content="NAGAD INFO WEB MADE BY YAMIN-69" />
+    <meta property="og:image" content="https://telegra.ph/file/6661999202ade69eb3e7d.jpg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta property="og:description" content="NAGAD INFO WEB MADE BY YAMIN-69" />
+    <link rel="shortcut icon"
+        href="https://telegra.ph/file/48914607f2807e85d02e7.jpg" />
+    <meta name="description" content="NAGAD INFO WEB MADE BY YAMIN-69">
+    <meta name="author" content="@monster_QO">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<style>
+		:root{
+			--background-color: rgb(4, 4, 4);
+			--box-background: rgb(7, 7, 7);
+			--shadow-color: #00FF00;
+			--heading-color: #00FF00;
+			--text-color: #00FF00;
+			--font-size:20px;
+			--border-color: #00FF00;
+			--button-hover: #00FF00;
+		}
+		.my-text-color {
+		  color: #00FF00; 
+		}
+		h3{
+		  color: #00FF00;
+		}
+		h2{
+		  color: #00FF00;
+		}
+		
+		.swal2-confirm, .swal2-cancel {
+		  color: #00FF00;
+		}
+
+		.swal2-confirm {
+		  background-color: #00FF00;
+		}
+		
+		.swal2-confirm:hover {
+		  background-color: dark#00FF00;
+		}
+		.swal2-confirm {
+		  border-color: #00FF00;
+		}
+
+		.swal2-popup {
+		  background-color: transparent !important;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		body{
+			background-color: var(--background-color);
+		}
+		h1{
+		  color: var(--heading-color);
+		  display: block;
+		  text-align: center;
+		  margin: 25px 25px 0 25px;
+		  padding: 25px 25px 0 25px;
+		  font-size: 60px;
+		}
+		.main{
+		  height: 400px;
+		  width: 800px;
+		  background-color: var(--box-background);
+		  display: block;
+		  margin: 0 auto;
+		  margin-top: 6%;
+		  box-shadow: 0 4px 15px 0 var(--shadow-color);
+		  border-radius: 10px;
+		  color: var(--text-color);
+		}
+		.main input{
+		  height: 45px;
+		  width: 70%;
+		  display: block;
+		  margin: 0 auto;
+		  outline: none;
+		  text-decoration: none;
+		  font-size: var(--font-size);
+		  font-weight: bold;
+		  border-top: none;
+		  border-left: none;
+		  border-right: none;
+		  border-color: var(--border-color);
+		  margin-top: 15px;
+		  color: #00FF00;
+		  background: transparent;
+		}
+		.main lavel{
+		  position: relative;
+		  left: 15%;
+		  top: 57px;
+		  font-size: 25px;
+		  color: var(--text-color);
+		  pointer-events: none;
+		  transition: 0.5s;
+		}
+		#positionChange{
+		  top:25px;
+		  font-size: 15px;
+		}
+		.main .submit{
+		  height: 50px;
+		  width: 250px;
+		 
+		  display: block;
+		  margin: 0 auto;
+		  margin-top: 20px;
+		}
+
+		.main .submit div {
+		  position: relative;
+		  display: inline-block;
+		  padding: 15px 50px;
+		  color: #00FF00;
+		  font-size: 20px;
+		  text-decoration: none;
+		  text-transform: uppercase;
+		  overflow: hidden;
+		  transition: .5s;
+		  margin-top: 40px;
+		  letter-spacing: 4px;
+		  cursor: pointer;
+		}
+		.container footer span{
+		  color: var(--text-color);
+		  display: block;
+		  margin-top: 50px;
+		}
+		.container  span a{
+		  color: var(--text-color);
+		  text-decoration: none;
+		  font-weight: bold;
+		}
+
+		@media screen and (max-width: 910px) {
+		  .main{
+			height: 500px;
+			width: 700px;
+			margin-top: 15%;
+			box-shadow: 0 4px 15px 0 var(--shadow-color);
+			border-radius: 10px;
+		  }
+		}
+		@media screen and (min-width: 880px) {
+		  .main{
+			margin-top: 10%;
+		  }
+		}
+
+		@media screen and (max-width: 876px) {
+		  .main{
+			height: 450px;
+			width: 500px;
+			margin-top: 22%;
+			box-shadow: 0 4px 15px 0 var(--shadow-color);
+			border-radius: 10px;
+		  }
+		}
+		@media screen and (max-width: 750px) {
+		  h1{
+			font-size: 40px;
+		  }
+		  .main{
+			height: 400px;
+			width: 500px;
+			margin-top: 26%;
+			box-shadow: 0 4px 15px 0 var(--shadow-color);
+			border-radius: 10px;
+		  }
+		  .main input{
+			height: 35px;
+		  }
+		  .main lavel{
+			left: 15%;
+			top: 12%;
+			font-size: 25px;
+		  }
+		  #positionChange{
+			top:25px;
+			font-size: 13px;
+		  }
+		  .main .submit div{
+			padding: 7px 30px;
+		  }
+		}
+		@media screen and (max-width: 550px) {
+		  h1{
+			font-size: 30px;
+		  }
+		  .main{
+			height: 350px;
+			width: 400px;
+			margin-top: 35%;
+			box-shadow: 0 4px 15px 0 var(--shadow-color);
+			border-radius: 10px;
+		  }
+		  .main input{
+			height: 35px;
+		  }
+		  .main lavel{
+			left: 15%;
+			top: 13%;
+			font-size: 20px;
+		  }
+		  #positionChange{
+			top:25px;
+			font-size: 13px;
+		  }
+		  .main .submit div{
+			padding: 7px 30px;
+		  }
+		}
+		@media screen and (max-width: 450px) {
+		  h1{
+			font-size: 30px;
+		  }
+		  .main{
+			height: 350px;
+			width: 300px;
+			margin-top: 55%;
+			box-shadow: 0 4px 15px 0 var(--shadow-color);
+			border-radius: 10px;
+		  }
+		  .main input{
+			height: 35px;
+		  }
+		  .main lavel{
+			left: 15%;
+			top: 13%;
+			font-size: 20px;
+		  }
+		  #positionChange{
+			top:25px;
+			font-size: 13px;
+		  }
+		  .main .submit div{
+			padding: 7px 30px;
+		  }
+		}
+		@media screen and (max-width: 380px) {
+		  h1{
+			font-size: 30px;
+		  }
+		  .main{
+			height: 350px;
+			width: 300px;
+			margin-top: 35%;
+			box-shadow: 0 4px 15px 0 var(--shadow-color);
+			border-radius: 10px;
+		  }
+		  .main input{
+			height: 35px;
+		  }
+		  .main lavel{
+			left: 15%;
+			top: 13%;
+			font-size: 20px;
+		  }
+		  #positionChange{
+			top:25px;
+			font-size: 13px;
+		  }
+		  .main .submit div{
+			padding: 7px 30px;
+		  }
+		}
 
 
-body {
-    margin: 0;
-    background: url(https://media.licdn.com/dms/image/D5605AQHZ5jdzfQ4bRQ/feedshare-thumbnail_720_1280/0/1681462520295?e=2147483647&v=beta&t=Q2es8cyHRphOL5fuQKeXDREwtVQlgbTYA8Zb8v-n0HQ) no-repeat center center fixed;
-    background-size: cover;
-    line-height: normal !important;
-font-family: "Open Sans",sans-serif;
-}
+		.main .submit div:hover {
+			background: #00FF00;
+			color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 5px var(--button-hover),
+						0 0 5px var(--button-hover),
+						0 0 10px var(--button-hover),
+						0 0 40px var(--button-hover);
+		  }
+		  
+		.main .submit div span {
+			position: absolute;
+			display: block;
+		  }
+		  
+		.main .submit div span:nth-child(1) {
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, #00FF00);
+			animation: button_animaton_one 1s linear infinite;
+		  }
+		  
+		  @keyframes button_animaton_one {
+			0% {
+			  left: -100%;
+			}
+			50%,100% {
+			  left: 100%;
+			}
+		  }
+		  
+		.main .submit div span:nth-child(2) {
+			top: -100%;
+			right: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(180deg, transparent, #00FF00);
+			animation: button_animaton_two 1s linear infinite;
+			animation-delay: .25s
+		  }
+		  
+		  @keyframes button_animaton_two {
+			0% {
+			  top: -100%;
+			}
+			50%,100% {
+			  top: 100%;
+			}
+		  }
+		  
+		.main .submit div span:nth-child(3) {
+			bottom: 0;
+			right: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(270deg, transparent, #00FF00);
+			animation: button_animaton_three 1s linear infinite;
+			animation-delay: .5s
+		  }
+		  
+		  @keyframes button_animaton_three {
+			0% {
+			  right: -100%;
+			}
+			50%,100% {
+			  right: 100%;
+			}
+		  }
+		  
+		.main .submit div span:nth-child(4) {
+			bottom: -100%;
+			left: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(360deg, transparent, #00FF00);
+			animation: button_animaton_four 1s linear infinite;
+			animation-delay: .75s
+		  }
+		  
+		  @keyframes button_animaton_four {
+			0% {
+			  bottom: -100%;
+			}
+			50%,100% {
+			  bottom: 100%;
+			}
+		  }
+		  
+		body {
+            background-color: #000000;
+            color: #00FF00;
+        }
 
-.search-box {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    width: 85%;
-    max-width: 450px;
-    transform: translateX(-50%);
-    padding: 15px 10px;
-    background: #f3d2d2;
-    border: 1px solid;
-    color: #b60000;
-    border-radius: 15px;
-}
+        table {
+            background-color: black;
+            border-color: #00FF00; 
+        }
 
-.result-box {
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    width: 85%;
-    max-width: 450px;
-    transform: translateX(-50%);
-    padding: 15px 10px;
-    background: #f3d2d2;
-    border: 1px solid;
-    color: #b60000;
-    border-radius: 15px;
-display: none;
-}
+        table th,
+        table td {
+            border-color: #00FF00; 
+        }
 
-h1 {
-    font-size: 20px;
-    text-align: center;
-}
+        table th:hover,
+        table td:hover {
+            background-color: #333333; 
+            color: #FFFFFF; 
+        }
 
-.search {
-    width: calc(100% - 10px);
-    position: relative;
-    margin-bottom: 5px;
-}
-
-.form-control {
-    width: calc(100% - 10px);
-    height: 37px;
-    font-size: 18px;
-    line-height: 37px;
-    color: #b60000;
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 5px 28px 5px 10px;
-    background: #f9e3e3;
-}
-
-button.btn.btn-secondary {
-    width: 100%;
-    height: 100%;
-    color: #b60000;
-    background: #f3d2d2;
-    border: 1px solid;
-    border-radius: 0 5px 5px 0px;
-    cursor: pointer;
-}
-
-.input-group-append {
-    position: absolute;
-    top: 0;
-    right: -12px;
-    height: 37px;
-    width: 44px;
-    color: #b60000;
-    background: #f3d2d2;
-}
-
-button i {
-    font-size: 18px;
-}
-
-.info-group-append {
-    border: 1px solid;
-    padding: 5px;
-    border-radius: 5px;
-margin-top: 5px;
-}
-
-.infos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-}
-
-.title {
-    font-size: 15px;
-    font-weight: bold;
-    width: 75px;
-}
-
-.data {
-    font-size: 15px;
-text-transform: capitalize;
-}
-
-.fa-fade{
-display: none;
-}
-
-.disable{
-    pointer-events: none;
-    opacity: 0.7;
-}
-
-.disable .fa-fade{
-display: unset;
-}
-
-.disable .factive{
-display: none;
-}
-
-img {
-    width: 100%;
-}
-
-h3 {
-    text-align: center;
-    margin: 10px;
-}
-</style>
+	</style>
 </head>
 <body>
-<div class="search-box">
-<h1>Nagad Number Info</h1>
-<form action="#" method="POST" class="search">
-<input type="search" id="search" class="form-control" placeholder="Search Number">
-<div class="input-group-append" id="sumbit">
-<button class="btn btn-secondary" type="button">
-<i class="fa-duotone fa-magnifying-glass factive"></i>
-<i class="fa-duotone fa-magnifying-glass fa-fade"></i>
-</button>
-</div>
-</form>
-</div>
+    <div class="container">
+        <div class="main">
+            <h1 class="text">NAGAD INFO</h1>
+            <lavel class="number_text">NAGAD NUMBER</lavel>
+            <input type="text"  id="phone">
+            <div class="submit">
+                <center><div id="submit"><span></span><span></span><span></span><span></span>Submit</div></center>
+            </div>
 
-<div class="result-box">
-<h1>Account Info</h1>
-<div class="info-group-append">
-<div class="infos"><div class="title">Number:</div><div class="data" id="number"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Operator:</div><div class="data" id="operator"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Email:</div><div class="data" id="email"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Segment:</div><div class="data" id="customerSegment"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Purpose:</div><div class="data" id="purpose"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Interest:</div><div class="data" id="interestBearingAccount"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Occu.ion:</div><div class="data" id="occupation"></div></div>
-</div>
-<h1>User Info</h1>
-<div class="info-group-append">
-<div class="infos"><div class="title">Name:</div><div class="data" id="name"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Gender:</div><div class="data" id="gender"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Nid:</div><div class="data" id="nid"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Dob:</div><div class="data" id="dob"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Father:</div><div class="data" id="fatherName"></div></div>
-</div>
-<div class="info-group-append">
-<div class="infos"><div class="title">Mother:</div><div class="data" id="motherName"></div></div>
-</div>
-<h1>Address</h1>
-<div class="info-group-append">
-<div class=""><div class="title">Permanent</div><div class="data" id="permanentAddress"></div></div>
-</div>
-<div class="info-group-append">
-<div class=""><div class="title">Present</div><div class="data" id="presentAddress"></div></div>
-</div>
-<h1>Document List</h1>
-<div id="documentList"></div>
-</div>
+        </div>
+        <footer>
+            <center>
+            <span>Developer :-<a href="https://t.me/Boniyamin69">@Boniyamin69</a></span>
+            </center>
+        </footer>
+    </div>
+	<div class="container mt-5" id="result" style="display: none;">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th scope="row">Name</th>
+						<td id="name"></td>
+					</tr>
+					<tr>
+						<th scope="row">UserID</th>
+						<td id="userId"></td>
+					</tr>
+					<tr>
+						<th scope="row">Status</th>
+						<td id="status"></td>
+					</tr>
+					<tr>
+						<th scope="row">UserType</th>
+						<td id="userType"></td>
+					</tr>
+					<tr>
+						<th scope="row">rbBase</th>
+						<td id="rbBase"></td>
+					</tr>
+					<tr>
+						<th scope="row">authTokenInfo</th>
+						<td id="authTokenInfo"></td>
+					</tr>
+					<tr>
+						<th scope="row">Verification Status</th>
+						<td id="verificationStatus"></td>
+					</tr>
+					<tr>
+						<th scope="row">Execution Status</th>
+						<td id="executionStatus"></td>
+					</tr>
+					<tr>
+						<th scope="row">Number</th>
+						<td id="m"></td>
+					</tr>
+					<tr>
+						<tr>
+    <th scope="row">Developer</th>
+    <td><a href="https://t.me/Boniyamin69" target="_blank">YAMIN-69</a></td>
+</tr>
 
-<script>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	
+	
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			  
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'U' && (event.ctrlKey || event.metaKey)) {
+                event.preventDefault();
+            }
+        });
+		  const submitButton = document.getElementById('submit');
+		  const phoneInput = document.getElementById('phone');
+		  
+		  $('#phone').on('focusin', function () {
+			  $('.number_text').attr('id', 'positionChange');
+		  });
 
-var onStop = true;
+		  $('#phone').on('focusout', function () {
+			  if (!this.value) {
+				  $('.number_text').removeAttr('id');
+			  }
+		  });
 
-$('form').submit(function(event){
-event.preventDefault();
-if(onStop){
-onStop = false;
-$('.result-box').hide();
-$('.result-box').html('');
-searchStart();
-}
-});
+		  submitButton.addEventListener('click', function () {
+				$('#result').hide();
+			  const phoneNumber = phoneInput.value;
+			  
+			  fetch('https://api.mr999plus.site/nagad-info/'+phoneNumber, {
+				  method: 'GET',
+			  }).then(response => response.json()).then(function (res) {
+					if(res['status'] == 200){
+						var data = res['data'];
+						if(data['success']){
+							$('#result').show();
+							$('#result').focus();
+							$('#m').html(phoneNumber);
+							$('#name').html(String(data['info']['name']));
+							$('#userId').html(String(data['info']['userId']));
+							$('#status').html(String(data['info']['status']));
+							$('#userType').html(String(data['info']['userType']));
+							$('#rbBase').html(String(data['info']['rbBase']));
+							$('#authTokenInfo').html(String(data['info']['authTokenInfo']));
+							$('#verificationStatus').html(String(data['info']['verificationStatus']));
+							$('#executionStatus').html(String(data['info']['executionStatus']));
+						}else{
+							Swal.fire({icon: 'error',title: 'Error',text: data['msg']});
+						}
+					}else{
+						Swal.fire({icon: 'error',title: 'Error',text: res['msg']});
+					}
+					  
 
-$('#sumbit').click(function(){
-if(onStop){
-onStop = false;
-$('.result-box').hide();
-searchStart();
-}
-});
+				  }).catch(function (error) {
+					  
+					  const errorMessage = (error.error) || 'এই নাম্বারে নগদ একাউন্ট নেই.';
 
-function searchStart(){
-$('form').addClass('disable');
-var search = $('#search').val();
-$.ajax({
-url: "https://mohammadahad.xyz/ahadngfull.php?n=" + search,
-method: "GET",
-success:function(res){
-onStop = true;
-if(res['success']){
-$('#number').html(res['number']);
-$('#operator').html(res['operator']);
-$('#name').html(res['name']);
-$('#gender').html(res['gender']);
-$('#email').html(res['email']);
-$('#customerSegment').html(res['customerSegment']);
-$('#nid').html(res['nid']);
-$('#dob').html(res['dob']);
-$('#fatherName').html(res['fatherName']);
-$('#motherName').html(res['motherName']);
-$('#permanentAddress').html(res['permanentAddress']);
-$('#presentAddress').html(res['presentAddress']);
-$('#interestBearingAccount').html(res['interestBearingAccount']);
-$('#occupation').html(res['occupation']);
-$('#purpose').html(res['purpose']);
-var documentList = '';
-for(var i = 0; i < res['documentList'].length; i++){
-documentList += '<div class="info-group-append"><h3>'+res['documentList'][i]['type']+'</h3><img src="'+res['documentList'][i]['file']+'" onerror="this.src=\'https://channel.mynagad.com:20010/img/error_404_page_bg.png\'"></div>';
-}
-if(documentList == ''){
-documentList = '<div class="info-group-append"><h3>Document not found!</h3></div>';
-}
-$('#documentList').html(documentList);
-$('.result-box').show();
-}else{
-alert(res['msg']);
-}
-$('form').removeClass('disable');
-},
-error:function(){
-onStop = true;
-$('form').removeClass('disable');
-alert('Network Error or Server Error');
-}
-});
-}
-</script>
+					  console.error('Error submitting phone number:', error);
+
+					
+					  Swal.fire({
+						  icon: 'error',
+						  title: 'Error',
+						  text: errorMessage,
+					  });
+				  });
+		  });
+		});
+    </script>
 </body>
 </html>
